@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(cors({
-  origin: '*',
+  origin: 'https://inamalisoomro.github.io/api-front-end-connection-/',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

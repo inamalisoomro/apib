@@ -4,7 +4,11 @@ import cors from 'cors';
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+app.use(cors({
+  origin: '*', // For testing purposes. Replace '*' with your frontend URL (e.g., 'http://127.0.0.1:5500') for production.
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 app.use(express.json());
 
 const allTodos = [];
@@ -88,7 +92,4 @@ app.put("/todo/:id", (req, res) => {
 
   
 });
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+export default app;
